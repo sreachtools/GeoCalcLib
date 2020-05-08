@@ -9,3 +9,5 @@
 docs
 Makefile
 User.make
+mexfiles/createLRSfile.m
+mexfiles/readLRSfile.m
