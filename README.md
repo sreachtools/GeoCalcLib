@@ -35,8 +35,10 @@ Your standard gcc should have GMP installed. Else, see the
 instructions in troubleshooting below.
 
 1. Download a zip file of this repository **OR** clone this
-   repository using `git clone
-   https://github.com/sreachtools/GeoCalcLib`.
+   repository using 
+   ```
+   git clone https://github.com/sreachtools/GeoCalcLib
+   ```
 1. Edit `User.make` file to include the path to MATLAB root
    folder. 
    - Note that `<FULL-PATH-TO-YOUR-MATLAB-INSTALLATION>` is the parent
@@ -45,10 +47,16 @@ instructions in troubleshooting below.
    - See
       [https://www.mathworks.com/matlabcentral/answers/66570-what-is-the-default-installation-path-for-matlab-on-architecture-x#answer_78163](https://www.mathworks.com/matlabcentral/answers/66570-what-is-the-default-installation-path-for-matlab-on-architecture-x#answer_78163)
    for hints on how to identify your matlab root folder for your OS.
-1. Open MATLAB and run `mex -v setup` to make sure that it
-   knows where `gcc` is. 
-1. Run `make` on the command prompt in the `GeoCalcLib`
-   folder.
+1. Run in MATLAB command prompt
+   ```
+   mex -v setup
+   ``` 
+   to make sure that that MATLAB's `mex` knows where `gcc` is. 
+1. Run in Unix command prompt after changing directory to the `GeoCalcLib`
+   folder,
+   ```
+   make
+   ``` 
 1. Add `/path/to/GeoCalcLib/mexfiles` to MATLAB path. If you want to use this
    across sessions, we recommend adding the following command to your MATLAB
    startup.
