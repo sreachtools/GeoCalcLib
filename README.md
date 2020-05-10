@@ -47,7 +47,7 @@ instructions in troubleshooting below.
    for hints on how to identify your matlab root folder for your OS.
 1. Open MATLAB and run `mex -v setup` to make sure that it
    knows where `gcc` is. 
-1. Run `$make` on the command prompt in the `GeoCalcLib`
+1. Run `make` on the command prompt in the `GeoCalcLib`
    folder.
 1. Add `/path/to/GeoCalcLib/mexfiles` to MATLAB path. If you want to use this
    across sessions, we recommend adding the following command to your MATLAB
