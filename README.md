@@ -44,12 +44,16 @@ instructions in troubleshooting below.
    - Note that `<FULL-PATH-TO-YOUR-MATLAB-INSTALLATION>` is the parent
    directory of MATLAB bin folder and does not end with a
    `/`.
-   - See
+   - Run in MATLAB command prompt
+     ```
+     matlabroot
+     ```
+     See
       [https://www.mathworks.com/matlabcentral/answers/66570-what-is-the-default-installation-path-for-matlab-on-architecture-x#answer_78163](https://www.mathworks.com/matlabcentral/answers/66570-what-is-the-default-installation-path-for-matlab-on-architecture-x#answer_78163)
-   for hints on how to identify your matlab root folder for your OS.
+   for more details
 1. Run in MATLAB command prompt
    ```
-   mex -v setup
+   mex -v -setup
    ``` 
    to make sure that that MATLAB's `mex` knows where `gcc` is. 
 1. Run in Unix command prompt after changing directory to the `GeoCalcLib`
@@ -73,22 +77,17 @@ library for arbitrary precision arithmetic, operating on
 signed integers, rational numbers, and floating-point
 numbers.
 
-**Steps**:  There are two options to resolve this issue.
-1) Download via `apt`.
-Specifically, do `sudo apt install libgmpXX`, where for
-Ubuntu 16.04, it was `libgmp10`.
+**Steps**: Build GMP from sources. (Last tested on `gmp-6.2.0.tar.lz`)
 
-2) Build GMP from sources. 
-    1. Get the tar ball from
-       [https://gmplib.org/#DOWNLOAD](https://gmplib.org/#DOWNLOAD)
-    1. Follow the installation instructions
-       [https://gmplib.org/manual/Installing-GMP.html#Installing-GMP](https://gmplib.org/manual/Installing-GMP.html#Installing-GMP)
-       1. Run `./configure` in the folder containing the
-          extracted gmp files.
-       1. Run `make`
-       1. Run `sudo make install` to add the files.
-   1. You should now be able to run the mex files from MATLAB.
-
+1. Get the tar ball from
+   [https://gmplib.org/#DOWNLOAD](https://gmplib.org/#DOWNLOAD)
+1. Follow the installation instructions
+   [https://gmplib.org/manual/Installing-GMP.html#Installing-GMP](https://gmplib.org/manual/Installing-GMP.html#Installing-GMP)
+   1. Run `./configure` in the folder containing the
+      extracted gmp files.
+   1. Run `make`
+   1. Run `sudo make install` to add the files.
+   
 ### Windows
 
 A major issue is the LRS's requirement of GMP. If anyone
